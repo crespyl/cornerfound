@@ -1,0 +1,19 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI}	/content/.+$
+RewriteRule .* - [L]
+
+RewriteCond %{REQUEST_URI}	.+\.(css|scss)$
+RewriteRule .* - [L]
+
+RewriteCond %{REQUEST_URI}	.+\.(js)$
+RewriteRule .* - [L]
+
+RewriteCond $1 !^(index\.php|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+
+
+Action compile-sass /libs/phpsass/compile-apache.php
+AddHandler compile-sass .sass .scss
+

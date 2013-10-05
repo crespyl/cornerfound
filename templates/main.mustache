@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Cornerfound</title>
+    <link rel="stylesheet" href="/styles/site.scss"/>
+    <link rel="stylesheet" href="/styles/syntax.scss"/>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css"/>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+    {{# styles }}
+    <link rel="stylesheet" href="{{ . }}"/>
+    {{/ styles }}
+    <script src="/js/jquery.min.js"></script> 
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    {{# scripts }}
+    <script type="text/javascript" src="{{ . }}"></script>
+    {{/ scripts }}
+  </head>
+  <body>
+    <div id="site-header">
+      <div id="site-nav" class="nav navbar-inverse navbar-fixed-top">
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="/">Cornerfound</a>
+	  <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" type="button">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	</div>
+	<div class="collapse navbar-collapse">
+	  <ul class="nav navbar-nav">
+	    <li><a href="/words/">Words</a></li>
+	    <li><a href="/experiments/">Experiments</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div id="site-content" class="container row">
+      <div class="main col-md-8">
+	{{# posts }}
+	<article class="block post">
+	  {{& text }}
+	</article>
+	{{/ posts }}
+      </div>
+      <div class="wrap col-md-4">
+	{{# sidebar }}
+	<div class="sidebar block">
+	  {{& text }}
+	</div>
+	{{/ sidebar }}
+      </div>
+    </div>
+    <div id="site-footer" class="footer">
+      {{site-footer}}
+    </div>
+  </body>
+</html>

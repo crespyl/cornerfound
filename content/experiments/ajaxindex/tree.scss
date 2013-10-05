@@ -1,0 +1,87 @@
+$content-indent: .5em;
+$content-padding: .5em;
+$content-lines: 1px solid silver;
+
+$dir-label-bg: darken(darkgreen, 10);
+$dir-label-loading-bg: desaturate( $dir-label-bg, 100 );
+
+.tree.tree-node
+{
+    list-style: none;
+
+    &.loading > .tree-label
+    {
+	cursor: wait !important;
+	background: $dir-label-loading-bg !important;
+    }
+
+    > .tree-label
+    {
+	padding-left: .5em;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	z-index: 10;
+
+	curosr: pointer;
+
+	transition: background 0.5s;
+	.icon 
+	{
+	    margin-right: .5em;
+	    display: none;
+	}
+    }
+    > .tree-contents
+    {
+	margin-left: $content-indent;
+	padding-left: $content-padding;
+	border-left: $content-lines;
+    }
+}
+
+/* directory labels */
+.tree.tree-node:not(.tree-leaf) > .tree-label
+{
+    background: $dir-label-bg;
+
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0, 0.5);
+
+    > .icon.glyphicon-folder-close
+    { display: none; }
+    > .icon.glyphicon-folder-open
+    { display: inline-block; }
+
+}
+
+.tree.tree-node.tree-closed:not(.tree-leaf) > .tree-label
+{
+    > .icon.glyphicon-folder-close
+    { display: inline-block; }
+    > .icon.glyphicon-folder-open
+    { display: none; }
+}
+
+/* open/closed nodes */
+.tree.tree-node.tree-closed
+{
+    > .tree-contents
+    {
+	opacity: 0;
+    }
+}
+
+.tree.tree-node.tree-closed.no-animations
+{
+    > .tree-contents
+    {
+	display: none;
+    }
+}
+
+.tree 
+{
+    margin-bottom: 2px;
+    margin-top: 2px;
+    overflow: hidden;
+}

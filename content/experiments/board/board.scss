@@ -1,0 +1,14 @@
+.controls
+{
+    text-align: left;
+
+    .btn-group.colors
+    {
+	margin-left: 1em;
+
+	.color-black { background: rgba(50,50,50, 1); }
+	.color-blue { background: rgba(50,50,150, 1);  }
+	.color-green { background: rgba(50,150,50, 1); }
+	.color-red { background: rgba(150,50,50, 1);  }
+    }
+}

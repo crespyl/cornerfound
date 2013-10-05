@@ -1,0 +1,72 @@
+$base-color: silver;
+$background-color: rgba(0,0,0, 0.7);
+
+
+.source {
+
+    background: $background-color;
+    
+    font-family: monospace;
+    font-size: 14px;
+
+    color: #f8f8f8;
+    
+
+    /* Base symbols (*=+-, etc.) */
+    .sy0 {
+	color: white;
+    }
+
+    /* Braces/Brackets */
+    .br0 {
+	color: #fff;
+    }
+
+    /* Numbers */
+    .nu0 {
+	color: $base-color;
+    }
+
+    /* Strings */
+    .st0 {
+	color: #8f9657;
+    }
+
+    /* Language Keywords */
+    .kw1 {
+	color: #CDA869;
+    }
+    .kw2 {
+	color: #f9ee98;
+    }
+    .kw3 {
+	color: #505e80;
+    }
+
+    /* Variables */
+    .re0 {
+	color: #7587a6;
+    }
+
+    /* Methods */
+    .me0 {}
+    .me1 {
+	color: #fff;
+    }
+    .me2 {
+	color: #000;
+    }
+
+    /* Comments */
+    .co1, .coMULTI {
+	color: #5f5a60;
+    }
+
+    /* Line hilights */
+    .li1 {
+	background: #202021;
+    }
+
+
+
+}
